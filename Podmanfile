@@ -1,0 +1,8 @@
+FROM centos:7
+RUN yum -y install httpd git
+RUN cd /var/www/html
+RUN git clone 	https://github.com/bruninho256/empresa/upload	
+
+
+RUN mv empresa/* /var/www/html
+CMD apachectl -D FOREGROUND
